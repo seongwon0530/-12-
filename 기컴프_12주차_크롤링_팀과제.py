@@ -40,3 +40,48 @@ print('                                                    (단위: 백만원)')
 for k in range(14):
   print(f'{org[k]}의 2019년 예산 소계는 {sum[k]}입니다.')
   print('')
+    
+    
+ # 학생 2
+
+print("---- End of List ----")
+print("")
+
+detail = input('세부사항을 입력하세요 > ')
+
+if detail == '지방자치단체지원':
+  s = 1
+if detail == '제주도개발사업특별회계지원':
+  s = 2
+if detail == '한국보훈복지의료공단지원':
+  s = 3
+if detail == '사회복지공동모금회지원':
+  s = 4
+if detail == '산림환경기능증진자금지원':
+  s = 5
+if detail == '소비자물가관리':
+  s = 6
+if detail == '국제금융센터보조':
+  s = 7
+if detail == '아동복지시설 아동치료 재활지원사업':
+  s = 8
+if detail == '재난적 의료비 지원사업':
+  s = 9
+if detail == '요보호아동 그룹홈 운영 지원':
+  s = 10
+if detail == '입양아동 가족지원':
+  s = 11
+if detail == '아동복지시설 기능보강':
+  s = 12
+if detail == '통상연계형경협사업':
+  s = 13
+if detail == '찾아가는복지서비스차량지원':
+  s = 14
+  
+if s == 3 or 4 or 5 or 6 or 7 or 8 or 9 or 13:
+  d = driver.find_element_by_xpath(f'//*[@id="container"]/div[2]/section/div/table/thead/tr[2]/th[3]').text
+
+if s == 1 or 2 or 10 or 11 or 12 or 14:
+  d = driver.find_element_by_xpath(f'//*[@id="container"]/div[2]/section/div/table/thead/tr[2]/th[2]').text
+
+print(f'{detail}의 보조는 {d}입니다.')
